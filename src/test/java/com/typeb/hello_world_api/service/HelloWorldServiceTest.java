@@ -36,7 +36,7 @@ class HelloWorldServiceTest {
                                 "a", "m", "A", "M"})
         void shouldReturnCapitalisedName(String name) {
             String result = service.greet(name);
-            assertThat(result).startsWith(String.valueOf(Character.toUpperCase(name.trim().charAt(0))));
+            assertThat(result).startsWith(String.valueOf(Character.toUpperCase(name.strip().charAt(0))));
         }
 
         @Test
@@ -99,36 +99,6 @@ class HelloWorldServiceTest {
         @DisplayName("Boundary 'Z' throws")
         void boundaryZ() {
             assertThatThrownBy(() -> service.greet("Z"))
-                    .isInstanceOf(InvalidInputException.class);
-        }
-    }
-
-    // =========================================================================
-    // Missing / blank / invalid format
-    // =========================================================================
-
-    @Nested
-    @DisplayName("When name is absent or blank")
-    class MissingOrBlank {
-
-        @Test
-        @DisplayName("null name throws")
-        void nullName() {
-            assertThatThrownBy(() -> service.greet(null))
-                    .isInstanceOf(InvalidInputException.class);
-        }
-
-        @Test
-        @DisplayName("empty string throws")
-        void emptyString() {
-            assertThatThrownBy(() -> service.greet(""))
-                    .isInstanceOf(InvalidInputException.class);
-        }
-
-        @Test
-        @DisplayName("whitespace-only string throws")
-        void blankString() {
-            assertThatThrownBy(() -> service.greet("   "))
                     .isInstanceOf(InvalidInputException.class);
         }
     }

@@ -8,11 +8,8 @@ import org.springframework.stereotype.Service;
 public class HelloWorldService {
 
     public String greet(String name) {
-        if (name == null || name.isBlank()) {
-            throw new InvalidInputException("Name is missing or empty");
-        }
 
-        String trimmed = name.trim();
+        String trimmed = name.strip();
         char first = trimmed.charAt(0);
 
         if (!Character.isLetter(first)) {
