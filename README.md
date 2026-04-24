@@ -84,3 +84,6 @@ curl "http://localhost:8080/hello-world"
 3. **First letter only** determines validity; the rest of the name is preserved as-is after capitalising the first character.
 4. **Case-insensitive** boundary check. `"alice"` and `"ALICE"` both succeed; `"nancy"` and `"NANCY"` both fail.
 5. The response capitalises only the first character of the (trimmed) name. `"alice"` → `"Alice"`, `"aLiCe"` → `"ALiCe"`.
+6. **Single-character names** (e.g. `name=A`) are valid. The spec defines behaviour
+   based solely on the first letter with no minimum length requirement. In a production
+   system a minimum length constraint would be appropriate.
