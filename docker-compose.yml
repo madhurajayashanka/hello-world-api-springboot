@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  hello-world-api-springboot:
+    build: .
+    container_name: hello-world-api-springboot
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/hello-world?name=alice || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
