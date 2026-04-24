@@ -1,6 +1,8 @@
-# hello-world-api-springboot
+# Hello-World-Api-SpringBoot
 
-A simple Spring Boot REST API built as a technical assessment.
+Watch the code explainer video for this project:
+
+[Code Explainer Video](https://drive.google.com/file/d/13X9QLdho2T_k0NlCYZPPUal9lWMNeCtl/view?usp=sharing)
 
 ## Requirements
 
@@ -40,9 +42,9 @@ For the full verify lifecycle (recommended):
 
 ### `GET /hello-world`
 
-| Parameter | Type   | Required | Description         |
-|-----------|--------|----------|---------------------|
-| `name`    | string | Yes      | Name to greet       |
+| Parameter | Type   | Required | Description   |
+| --------- | ------ | -------- | ------------- |
+| `name`    | string | Yes      | Name to greet |
 
 #### Success — 200 OK
 
